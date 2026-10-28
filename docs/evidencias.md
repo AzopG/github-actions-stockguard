@@ -69,6 +69,9 @@ def test_stock_critico():
 - El workflow se ejecutó por el evento `pull_request`, no por `push`: el trigger de `push`
   está limitado a `main`.
 - Pruebas en el PR: `10 passed` (5 originales + 5 de la regla nueva).
+- Merge con squash: `0fea355`. El `push` resultante a `main` volvió a correr el workflow en
+  verde (run
+  [40705766562](https://github.com/AzopG/github-actions-stockguard/actions/runs/40705766562)).
 
 ## Ejecución manual
 
