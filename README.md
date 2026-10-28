@@ -19,6 +19,22 @@ Es un ejemplo didáctico: **no** forma parte del proyecto final RapidGo 360.
 Con `stock_minimo = 20` y `stock_actual = 7`: el 50 % del mínimo es 10, y 7 ≤ 10, así que
 el resultado es **CRITICO**.
 
+### Regla de sobrestock
+
+`detectar_sobrestock(stock_actual, stock_minimo, factor=2.0)` responde si el inventario
+está muy por encima del mínimo requerido, que es capital inmovilizado y espacio de
+almacenamiento ocupado sin necesidad.
+
+| Condición | Resultado |
+| --- | --- |
+| `stock_actual > stock_minimo * factor` | `True` |
+| `stock_actual <= stock_minimo * factor` | `False` |
+| `stock_actual < 0` o `stock_minimo <= 0` | `ValueError` |
+| `factor <= 1` | `ValueError` |
+
+El límite es estricto: con `stock_minimo = 20` y `factor = 2.0`, un stock de 40 **no** es
+sobrestock; 41 sí.
+
 ## Estructura
 
 ```
